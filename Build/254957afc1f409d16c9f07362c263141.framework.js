@@ -2571,6 +2571,7 @@ var gameanalytics;
                 }
             };
             GAHTTPApi.initRequestCallback = function (request, url, callback, extra) {
+                debugger;
                 if (extra === void 0) { extra = null; }
                 var authorization = extra[0];
                 var JSONstring = extra[1];
