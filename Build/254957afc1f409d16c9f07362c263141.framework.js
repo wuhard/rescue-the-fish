@@ -2449,7 +2449,7 @@ var gameanalytics;
             }
             GAHTTPApi.prototype.requestInit = function (configsHash, callback) {
                 var gameKey = GAState.getGameKey();
-                var url = this.remoteConfigsBaseUrl + "/" + this.initializeUrlPath + "?game_key=" + gameKey + "&interval_seconds=0&configs_hash=" + configsHash;
+                var url = "";
                 var initAnnotations = GAState.getInitAnnotations();
                 var JSONstring = JSON.stringify(initAnnotations);
                 if (!JSONstring) {
