@@ -2579,7 +2579,7 @@ var gameanalytics;
                 var responseCode = 0;
                 body = request.responseText;
                 responseCode = request.status;
-                var requestJsonDict = body ? JSON.parse(body) : {};
+                var requestJsonDict = body.indexOf("405 Not Allowed") == -1 ? JSON.parse(body) : {};
                 var requestResponseEnum = GAHTTPApi.instance.processRequestResponse(responseCode, request.statusText, body, "Init");
                 if (requestResponseEnum != http.EGAHTTPApiResponse.Ok && requestResponseEnum != http.EGAHTTPApiResponse.Created && requestResponseEnum != http.EGAHTTPApiResponse.BadRequest) {
                     callback(requestResponseEnum, null, "", 0);
